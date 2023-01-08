@@ -18,6 +18,37 @@ img {
 }
 
 button {
-  font-size: 32px;
+  padding: 5px;
+  font-size: 26px;
   border-radius: 8px;
+}
+
+#datetime-picker {
+  padding: 5px;
+  font-size: 26px;
+  border-radius: 8px;
+}
+
+.timer {
+  display: flex;
+  margin-top: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field:not(:first-child) {
+  margin-left: 20px;
+}
+
+.value {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.label {
+  font-size: 18px;
 }
