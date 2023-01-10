@@ -15,12 +15,7 @@ function createPromise(position, delay) {
     }, delay);
   })
     
-  promise.then(({ position, delay }) => {
-    Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
-  })
-  .catch(({ position, delay }) => {
-    Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
-  });
+  return promise;
 }
 
 const callPromise = (event) => {
@@ -29,6 +24,12 @@ const callPromise = (event) => {
 
   for (let index = 1; index <= amount.value; index += 1) {
     createPromise(index, delayStep)
+    .then(({ position, delay }) => {
+      Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
+    })
+    .catch(({ position, delay }) => {
+      Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
+    });
     delayStep += Number(step.value);
   }
 }
