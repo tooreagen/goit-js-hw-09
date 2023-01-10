@@ -64,7 +64,6 @@ function timer() {
             spanHours.textContent = addLeadingZero(date.hours);
             spanMinutes.textContent = addLeadingZero(date.minutes);
             spanSeconds.textContent = addLeadingZero(date.seconds);
-            console.log(timeDifference);
         }
     }, 1000);
 }
